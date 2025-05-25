@@ -9,3 +9,8 @@ output "private_subnets" {
 output "public_subnets" {
   value = module.vpc.public_subnets
 }
+
+# For bastion EC2 module (EKS repo)
+output "vpc_cidr_block" {
+  value = module.vpc.vpc_cidr_block
+}
