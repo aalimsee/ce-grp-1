@@ -29,7 +29,7 @@ module "vpc" {
 
   # VPC tag
   tags = {
-    Name        = "ce-grp-1"
+    Project     = "ce-grp-1"
     Environment = "dev"
   }
 
