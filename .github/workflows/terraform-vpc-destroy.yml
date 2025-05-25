@@ -1,7 +1,8 @@
+---
 name: Terraform VPC Destroy (with Approval)
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 
 
 env:
   AWS_REGION: us-east-1
