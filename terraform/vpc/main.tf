@@ -56,7 +56,6 @@ module "vpc" {
   nat_gateway_tags = {
     Name = "ce-grp-1-nat-gw"
   }
-
   # Internet Gateway tag
   igw_tags = {
     Name = "ce-grp-1-igw"
