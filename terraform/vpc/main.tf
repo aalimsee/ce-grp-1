@@ -20,12 +20,17 @@ module "vpc" {
 
   # Subnet tags
   public_subnet_tags = {
-    Name = "ce-grp-1-public"
+    Name                                 = "ce-grp-1-public"
+    "kubernetes.io/role/elb"             = "1"
+    "kubernetes.io/cluster/ce-grp-1-eks" = "shared" # Add Required Kubernetes Tags to Subnets
   }
 
   private_subnet_tags = {
-    Name = "ce-grp-1-private"
+    Name                                 = "ce-grp-1-private"
+    "kubernetes.io/role/internal-elb"    = "1"
+    "kubernetes.io/cluster/ce-grp-1-eks" = "shared" # Add Required Kubernetes Tags to Subnets
   }
+
 
   # VPC tag
   tags = {
