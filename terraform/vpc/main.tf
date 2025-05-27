@@ -31,6 +31,7 @@ module "vpc" {
     "kubernetes.io/cluster/ce-grp-1-eks" = "shared" # Add Required Kubernetes Tags to Subnets
   }
 
+
   # VPC tag
   tags = {
     Project     = "ce-grp-1"
