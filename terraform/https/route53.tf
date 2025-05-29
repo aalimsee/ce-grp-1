@@ -55,8 +55,8 @@ resource "aws_route53_record" "public_alb" {
   alias {
     # name                   = aws_lb.public_alb.dns_name
     # zone_id                = aws_lb.public_alb.zone_id
-    name                   = "k8s-prod-nginxing-75a4ff3d14-280868929.us-east-1.elb.amazonaws.com" # replace with actual ALB DNS from Argo deployment
-    zone_id                = "Z35SXDOTRQ7X7K"                                                     # <-- must match ALB’s Hosted Zone ID                                # hosted zone ID for ALB in us-east-1 (static)
+    name                   = "k8s-cegrp1-498cc35dc8-629768.us-east-1.elb.amazonaws.com" # replace with actual ALB DNS from Argo deployment
+    zone_id                = "Z35SXDOTRQ7X7K"                                           # <-- must match ALB’s Hosted Zone ID                                # hosted zone ID for ALB in us-east-1 (static)
     evaluate_target_health = true
   }
 }
