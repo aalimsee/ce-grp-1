@@ -54,6 +54,7 @@ jobs:
   terraform-https:
     name: Terraform HTTPS
     runs-on: ubuntu-latest
+    needs: terraform
 
     defaults:
       run:
@@ -115,7 +116,7 @@ jobs:
   snyk-iac-https:
     name: Snyk IaC Scan - HTTPS
     runs-on: ubuntu-latest
-    needs: terraform
+    needs: terraform-https
 
     defaults:
       run:
