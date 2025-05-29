@@ -54,6 +54,7 @@ jobs:
   terraform-https:
     name: Terraform HTTPS
     runs-on: ubuntu-latest
+    needs: terraform
 
     defaults:
       run:
