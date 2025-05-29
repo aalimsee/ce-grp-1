@@ -1,5 +1,5 @@
 ---
-name: Terraform VPC Deployment with Snyk
+name: Terraform VPC-HTTPS Deployment with Snyk
 
 on:
   push:
@@ -50,6 +50,47 @@ jobs:
       - name: Terraform Apply
         if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: terraform apply -auto-approve -input=false
+
+  terraform-https:
+    name: Terraform HTTPS
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform/https
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Format Check
+        run: terraform fmt -check
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -input=false
+
+      - name: Terraform Apply
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: terraform apply -auto-approve -input=false
+
 
   snyk-iac:
     name: Snyk IaC Scan
