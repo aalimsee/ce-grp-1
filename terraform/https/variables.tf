@@ -1,7 +1,7 @@
 
 variable "createdByTerraform" {
   type    = string
-  default = "Managed by Terraform - CE-GRP-1"
+  default = "Managed by Terraform - ce-grp-1"
 }
 
 # Switch to True, Use terraform plan|apply -var="use_https=true"
