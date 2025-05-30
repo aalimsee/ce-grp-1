@@ -58,8 +58,8 @@ resource "aws_route53_record" "public_alb" {
     # name                   = "k8s-cegrp1-498cc35dc8-629768.us-east-1.elb.amazonaws.com" # replace with actual ALB DNS from Argo deployment
     # zone_id                = "Z35SXDOTRQ7X7K"                                           # <-- must match ALB’s Hosted Zone ID                                # hosted zone ID for ALB in us-east-1 (static)
 
-    name                   = "k8s-default-cegrp1in-addf31d141-221442676.us-east-1.elb.amazonaws.com" # replace with actual ALB DNS from Argo deployment
-    zone_id                = "Z35SXDOTRQ7X7K"                                                        # <-- must match ALB’s Hosted Zone ID                                # hosted zone ID for ALB in us-east-1 (static)
+    name                   = "k8s-prod-cegrp1in-67b93fd9b4-188403575.us-east-1.elb.amazonaws.com" # replace with actual ALB DNS from Argo deployment
+    zone_id                = "Z35SXDOTRQ7X7K"                                                     # <-- must match ALB’s Hosted Zone ID                                # hosted zone ID for ALB in us-east-1 (static)
     evaluate_target_health = true
   }
 }
