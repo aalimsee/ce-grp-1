@@ -18,6 +18,12 @@ variable "route53_zone" {
 variable "route53_subdomain" {
   default = "ce-grp-1"
 }
+variable "route53_subdomain_test" {
+  default = "test.ce-grp-1"
+}
+variable "route53_subdomain_dev" {
+  default = "dev.ce-grp-1"
+}
 
 variable "key_pair" {
   type    = string
